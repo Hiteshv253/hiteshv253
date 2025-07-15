@@ -1,37 +1,23 @@
-## 👋 Hi there, I'm Hitesh Kumar
+### 👋 Hi, I'm [Your Name]
 
-🚀 **Full Stack Developer** with hands-on experience in building scalable web applications and automating infrastructure.
+🚀 **Full Stack Developer** with experience in building scalable web applications and automating infrastructure.
 
 ---
 
-### 🛠️ Tech Stack
+### 🔧 Tech Stack
 
 - **Backend**: Laravel, PHP, CodeIgniter, REST APIs, Payment Gateway Integration  
 - **Frontend**: jQuery, AJAX  
 - **Database**: MySQL  
 - **CMS**: WordPress  
-- **DevOps & Tools**: Linux, Terraform, Ansible, CI/CD (Jenkins, GitHub Actions)  
-- **Cloud & Containers**: Docker, Kubernetes (K8s), AWS, Google Cloud (GCP)
+- **DevOps & Tools**: Linux, CI/CD, Terraform, Ansible, Jenkins, GitHub Actions  
+- **Containers & Orchestration**: Docker, Kubernetes (K8s)  
+- **Cloud Platforms**: AWS, Google Cloud, Azure  
+- **Monitoring & Logging**: Prometheus, Grafana, Splunk  
+- **Security & Compliance**: Trivy, SonarQube  
+- **Automation & Build Tools**: Maven, Selenium  
+- **Version Control**: Git  
 
 ---
 
-### 🌱 Currently Exploring
-- Advanced DevOps practices  
-- Kubernetes production workflows  
-- Serverless architecture on AWS/GCP  
-
----
-
-### 📫 Connect with Me
-
-- 💼 [LinkedIn](https://www.linkedin.com/in/your-profile)  
-- ✉️ [Email](mailto:your@email.com)  
-- 🌐 [Portfolio](https://your-portfolio-link.com)
-
----
-
-### 🧰 GitHub Stats
-
-![Hitesh's GitHub stats](https://github-readme-stats.vercel.app/api?username=Hiteshv253&show_icons=true&theme=radical)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Hiteshv253&layout=compact&theme=radical)
+🌱 Always learning and contributing to open-source.
