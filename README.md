@@ -1,16 +1,37 @@
-## Hi there 👋
+## 👋 Hi there, I'm Hitesh Kumar
 
-<!--
-**Hiteshv253/hiteshv253** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+🚀 **Full Stack Developer** with hands-on experience in building scalable web applications and automating infrastructure.
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### 🛠️ Tech Stack
+
+- **Backend**: Laravel, PHP, CodeIgniter, REST APIs, Payment Gateway Integration  
+- **Frontend**: jQuery, AJAX  
+- **Database**: MySQL  
+- **CMS**: WordPress  
+- **DevOps & Tools**: Linux, Terraform, Ansible, CI/CD (Jenkins, GitHub Actions)  
+- **Cloud & Containers**: Docker, Kubernetes (K8s), AWS, Google Cloud (GCP)
+
+---
+
+### 🌱 Currently Exploring
+- Advanced DevOps practices  
+- Kubernetes production workflows  
+- Serverless architecture on AWS/GCP  
+
+---
+
+### 📫 Connect with Me
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/your-profile)  
+- ✉️ [Email](mailto:your@email.com)  
+- 🌐 [Portfolio](https://your-portfolio-link.com)
+
+---
+
+### 🧰 GitHub Stats
+
+![Hitesh's GitHub stats](https://github-readme-stats.vercel.app/api?username=Hiteshv253&show_icons=true&theme=radical)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Hiteshv253&layout=compact&theme=radical)
