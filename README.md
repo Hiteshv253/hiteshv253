@@ -8,7 +8,7 @@
 
 - **Backend**: Laravel, PHP, CodeIgniter, REST APIs, Payment Gateway Integration  
 - **Frontend**: jQuery, AJAX  
-- **Database**: MySQL  
+- **Database**: MySQL,PostgresSQL 
 - **CMS**: WordPress  
 - **DevOps & Tools**: Linux, CI/CD, Terraform, Ansible, Jenkins, GitHub Actions  
 - **Containers & Orchestration**: Docker, Kubernetes (K8s)  
