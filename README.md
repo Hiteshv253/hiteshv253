@@ -20,10 +20,10 @@ I specialize in designing high-performance systems, automating deployments, and 
 ## 🛠️ Tech Stack
 
 **Backend:**
-Laravel, PHP, CodeIgniter, REST APIs
+Laravel, PHP, WordPress, CodeIgniter, REST APIs
 
 **Frontend:**
-jQuery, AJAX
+jQuery, AJAX ,HTML
 
 **Database:**
 MySQL, PostgreSQL
@@ -39,9 +39,6 @@ Docker, Kubernetes
 
 **Monitoring & Security:**
 Prometheus, Grafana, Splunk, Trivy, SonarQube
-
-**Tools & Others:**
-Linux, Git, Maven, Selenium, WordPress
 
 ---
 
