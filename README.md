@@ -9,7 +9,7 @@
 
 ## 🧠 About Me  
 
-- 💼 10+ years of experience in **backend development & DevOps**
+- 💼 8+ years of experience in **backend development & DevOps**
 - ⚙️ Strong focus on **production systems, scalability & automation**
 - 🔄 Experience handling **end-to-end lifecycle (development → deployment → monitoring)**
 - 🏢 Worked on **enterprise applications (Odoo, SaaS platforms, service systems)**  
