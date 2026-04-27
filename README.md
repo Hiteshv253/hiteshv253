@@ -20,7 +20,7 @@
 
 ✔️ Scalable backend systems (Laravel, PHP, APIs)  
 ✔️ CI/CD pipelines (GitHub Actions, Jenkins)  
-✔️ Cloud deployments (AWS, Azure, GCP)  
+✔️ Cloud deployments (AWS, Azure)  
 ✔️ Containerized environments (Docker, Kubernetes)  
 ✔️ Infrastructure as Code (Terraform, Ansible)  
 ✔️ Monitoring, logging & security implementation  
@@ -67,7 +67,7 @@
 `MySQL` `PostgreSQL`  
 
 ### ☁️ Cloud & DevOps  
-`AWS` `Azure` `GCP`  
+`AWS` `Azure`  
 `Terraform` `Ansible`  
 
 ### ⚙️ CI/CD  
