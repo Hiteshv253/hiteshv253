@@ -71,13 +71,13 @@
 `Terraform` `Ansible`  
 
 ### ⚙️ CI/CD  
-`GitHub Actions` `Jenkins`  
+`GitHub Actions` 
 
 ### 🐳 Containers  
 `Docker` `Kubernetes`  
 
 ### 📊 Monitoring & Security  
-`Prometheus` `Grafana` `Trivy` `SonarQube`  
+`Prometheus` `Grafana` 
 
 ---
 
@@ -101,7 +101,7 @@
 ## 🧩 Currently Working On  
 
 - ⚡ Kubernetes production deployments  
-- ⚡ Infrastructure automation (Terraform + Ansible)  
+- ⚡ Infrastructure automation (Terraform)  
 - ⚡ AI-powered integrations in web applications  
 
 ---
