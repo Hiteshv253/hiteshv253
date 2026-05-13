@@ -1,7 +1,7 @@
 # 👋 Hi, I'm Hitesh Kumar  
 
 <p align="center">
-  <b>🚀 Senior Full Stack Developer | DevOps Engineer | System Architect</b><br/>
+  <b>🚀 Senior Full Stack Developer | DevOps Engineer </b><br/>
   Building scalable systems • Automating infrastructure • Shipping production-ready apps
 </p>
 
