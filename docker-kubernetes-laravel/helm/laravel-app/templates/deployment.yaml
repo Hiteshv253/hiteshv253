@@ -1,0 +1,86 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "laravel-app.fullname" . }}
+  labels:
+    app: {{ include "laravel-app.name" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "laravel-app.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "laravel-app.name" . }}
+    spec:
+      volumes:
+        # Shared web assets folder between PHP and Nginx containers
+        - name: web-root
+          emptyDir: {}
+        # Nginx configuration mapping
+        - name: nginx-config
+          configMap:
+            name: {{ include "laravel-app.fullname" . }}-nginx-config
+
+      containers:
+        # Container 1: Laravel PHP-FPM Application Server
+        - name: laravel-app
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 9000
+              name: fpm
+          envFrom:
+            - configMapRef:
+                name: {{ include "laravel-app.fullname" . }}-config
+          env:
+            # Sensitive Laravel key loaded from K8s secrets
+            - name: APP_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "laravel-app.fullname" . }}-secrets
+                  key: app-key
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "laravel-app.fullname" . }}-secrets
+                  key: db-password
+          volumeMounts:
+            - name: web-root
+              mountPath: /var/www/html
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          livenessProbe:
+            httpGet:
+              path: /api/v1/healthz
+              port: 80
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /api/v1/readiness
+              port: 80
+            initialDelaySeconds: 20
+            periodSeconds: 10
+
+        # Container 2: Nginx Proxy Sidecar
+        - name: nginx-sidecar
+          image: "{{ .Values.nginxImage.repository }}:{{ .Values.nginxImage.tag }}"
+          imagePullPolicy: {{ .Values.nginxImage.pullPolicy }}
+          ports:
+            - containerPort: 80
+              name: http
+          volumeMounts:
+            - name: web-root
+              mountPath: /var/www/html
+            - name: nginx-config
+              mountPath: /etc/nginx/conf.d/default.conf
+              subPath: default.conf
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 50m
+              memory: 64Mi

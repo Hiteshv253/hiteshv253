@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  # Laravel PHP-FPM Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: laravel-app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    environment:
+      - APP_NAME=LaravelDevOps
+      - APP_ENV=production
+      - APP_KEY=base64:X8d7Wd/P9zH5Vz8V8qD7q5J7v7l4J7R9R4Z1K4E4F4o=
+      - APP_DEBUG=false
+      - APP_URL=http://localhost
+      - DB_CONNECTION=pgsql
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_DATABASE=laravel_prod
+      - DB_USERNAME=laravel_user
+      - DB_PASSWORD=SecretProdPassword123
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - CACHE_DRIVER=redis
+      - SESSION_DRIVER=redis
+      - QUEUE_CONNECTION=redis
+    depends_on:
+      - db
+      - redis
+    networks:
+      - app-network
+
+  # Nginx Web Server Service
+  web:
+    image: nginx:alpine
+    container_name: nginx-web
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+      - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - app-network
+
+  # PostgreSQL Database Service
+  db:
+    image: postgres:15-alpine
+    container_name: postgres-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: laravel_prod
+      POSTGRES_USER: laravel_user
+      POSTGRES_PASSWORD: SecretProdPassword123
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+  # Redis Cache Service
+  redis:
+    image: redis:7-alpine
+    container_name: redis-cache
+    restart: unless-stopped
+    volumes:
+      - redisdata:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  pgdata:
+    driver: local
+  redisdata:
+    driver: local

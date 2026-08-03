@@ -1,0 +1,83 @@
+---
+- name: Provision and Secure Production Web Server
+  hosts: webservers
+  become: true
+  vars:
+    docker_packages:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-compose-plugin
+
+  tasks:
+    # --- 1. System Upgrades & Packages ---
+    - name: Update apt cache and upgrade system packages
+      apt:
+        update_cache: true
+        upgrade: dist
+        cache_valid_time: 3600
+
+    - name: Install baseline administrative tools
+      apt:
+        name:
+          - curl
+          - git
+          - ufw
+          - fail2ban
+          - unattended-upgrades
+        state: present
+
+    # --- 2. Security Hardening ---
+    - name: Configure UFW firewall rules
+      ufw:
+        rule: allow
+        port: "{{ item }}"
+        proto: tcp
+      loop:
+        - '22'
+        - '80'
+        - '443'
+
+    - name: Enable UFW firewall
+      ufw:
+        state: enabled
+
+    - name: Harden SSH daemon configuration
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: "{{ item.regexp }}"
+        line: "{{ item.line }}"
+        state: present
+      loop:
+        - { regexp: '^PermitRootLogin', line: 'PermitRootLogin no' }
+        - { regexp: '^PasswordAuthentication', line: 'PasswordAuthentication no' }
+        - { regexp: '^X11Forwarding', line: 'X11Forwarding no' }
+      notify: Restart SSH
+
+    # --- 3. Docker Installation ---
+    - name: Add Docker GPG Apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker Repository
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
+        state: present
+
+    - name: Install Docker and Docker Compose plugins
+      apt:
+        name: "{{ docker_packages }}"
+        state: present
+
+    - name: Ensure Docker service is active and enabled
+      service:
+        name: docker
+        state: started
+        enabled: true
+
+  handlers:
+    - name: Restart SSH
+      service:
+        name: sshd
+        state: restarted

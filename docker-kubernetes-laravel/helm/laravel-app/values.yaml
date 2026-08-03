@@ -1,0 +1,57 @@
+# --- Deployment Parameters ---
+replicaCount: 3
+
+image:
+  repository: hiteshv253/laravel-app
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+nginxImage:
+  repository: nginx
+  tag: "alpine"
+  pullPolicy: IfNotPresent
+
+# --- Application Configuration ---
+config:
+  appName: "LaravelK8sProd"
+  appEnv: "production"
+  appDebug: "false"
+  dbHost: "mysql-service.database.svc.cluster.local"
+  dbPort: "3306"
+  dbName: "laravel_k8s"
+  redisHost: "redis-service.cache.svc.cluster.local"
+
+# --- Resource Allocations ---
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 200m
+    memory: 256Mi
+
+# --- Autoscaling ---
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 70
+  targetMemoryUtilizationPercentage: 80
+
+# --- Networking ---
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  className: "nginx"
+  hosts:
+    - host: laravel.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: laravel-tls-secret
+      hosts:
+        - laravel.local

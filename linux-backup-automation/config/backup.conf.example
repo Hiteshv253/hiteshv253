@@ -1,0 +1,33 @@
+# ==============================================================================
+# LINUX BACKUP SYSTEM CONFIGURATION
+# ==============================================================================
+
+# --- Path Configurations ---
+SOURCE_DIR="/var/www/laravel-app"       # Path to back up
+LOCAL_BACKUP_PATH="/backups"            # Path to store backup files locally
+
+# --- Database Configurations ---
+BACKUP_MYSQL=true
+DB_HOST="127.0.0.1"
+DB_NAME="production_db"
+DB_USER="backup_user"
+DB_PASS="ReplaceWithSecureDBPass99!"
+
+# --- GPG Encryption Configurations ---
+ENABLE_GPG=true
+GPG_PASSPHRASE="SuperSecretSymmetricPassphraseHere123"
+
+# --- Remote Sync Configurations ---
+ENABLE_REMOTE_SYNC=true
+REMOTE_HOST="192.168.1.50"              # Remote storage server IP
+REMOTE_USER="backup_node"               # Remote SSH user
+REMOTE_PORT=22                          # Remote SSH port
+REMOTE_PATH="/var/backups/web-server"   # Remote storage directory path
+SSH_KEY_PATH="/home/ubuntu/.ssh/id_rsa" # SSH private key location
+
+# --- Policy and Alerts ---
+RETENTION_DAYS=7                        # Clean files older than 7 days
+MAX_DISK_THRESHOLD=85                   # Disk warning threshold percentage (0-100)
+
+# Discord notification URL (leave empty to disable alerts)
+DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/12345678/example-webhook-hash"

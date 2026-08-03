@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "laravel-app.fullname" . }}-config
+  labels:
+    app: {{ include "laravel-app.name" . }}
+data:
+  APP_NAME: {{ .Values.config.appName | quote }}
+  APP_ENV: {{ .Values.config.appEnv | quote }}
+  APP_DEBUG: {{ .Values.config.appDebug | quote }}
+  DB_HOST: {{ .Values.config.dbHost | quote }}
+  DB_PORT: {{ .Values.config.dbPort | quote }}
+  DB_DATABASE: {{ .Values.config.dbName | quote }}
+  REDIS_HOST: {{ .Values.config.redisHost | quote }}

@@ -1,0 +1,24 @@
+# --- AWS Account & Region Settings ---
+aws_region     = "us-east-1"
+aws_account_id = "123456789012" # Replace with your 12-digit AWS Account ID
+environment    = "prod"
+
+# --- Key Pair Settings ---
+key_name = "my-production-ssh-key" # Needs to exist on AWS EC2 console
+
+# --- Networking Parameters ---
+vpc_cidr            = "10.0.0.0/16"
+public_subnet_cidrs = ["10.0.1.0/24", "10.0.2.0/24"]
+private_subnet_cidrs = ["10.0.10.0/24", "10.0.11.0/24"]
+availability_zones   = ["us-east-1a", "us-east-1b"]
+
+# --- Admin Access Control ---
+allowed_admin_ips = ["203.0.113.50/32"] # Replace with your corporate or local static external IP
+
+# --- Instance Sizing ---
+instance_type = "t3.medium"
+
+# --- Database Parameters ---
+db_name     = "laravel_prod"
+db_username = "prod_dbadmin"
+db_password = "ReplaceWithHighlySecurePassword987!"
