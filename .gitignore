@@ -1,0 +1,52 @@
+# --- OS Metadata ---
+.DS_Store
+Thumbs.db
+*.tmp
+
+# --- Docker & Local Environment ---
+.env
+.env.local
+.env.*.local
+*.log
+docker-compose.override.yml
+
+# --- PHP & Laravel ---
+/vendor/
+/bootstrap/cache/*
+/storage/*.key
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+.phpunit.result.cache
+composer.lock
+
+# --- Node & NPM ---
+/node_modules/
+/npm-debug.log*
+/yarn-error.log*
+/package-lock.json
+
+# --- Terraform Configuration ---
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+.terraform/
+.terraform.lock.hcl
+tfplan
+tfplan.binary
+
+# --- Kubernetes & Helm ---
+*.kubeconfig
+/helm/laravel-app/charts/
+/helm/laravel-app/resources/
+
+# --- IDE & Editors ---
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
