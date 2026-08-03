@@ -27,41 +27,23 @@
 
 ---
 
-## 🏗️ Featured Projects & Proof of Work
+## 🏗️ Showcase Portfolio (10-Repository Layout)
 
-Here is a curated collection of production-ready DevOps and Infrastructure setups that I have designed. These demonstrate my approach to automation, architecture design, containerization, and monitoring.
+Here is a collection of production-ready DevOps configurations, cloud setups, scripting utilities, and design notes organized flat in the root directory.
 
-### 🚀 Core Portfolio Projects
+### 🚀 Core Engineering Projects
+1. **[laravel-devops-cicd](laravel-devops-cicd)**: Containerized PHP-FPM / Nginx app deployment setup running on GitHub Actions pipelines with zero-downtime atomic symlink-swapping deployment scripts. Includes a sub-lab for **[Jenkins Pipelines](laravel-devops-cicd/jenkins-cicd)**.
+2. **[terraform-aws-infrastructure](terraform-aws-infrastructure)**: Highly isolated multi-subnet AWS network infrastructure provisioned completely using dry Terraform modules. Includes a sub-lab for **[Ansible Server Hardening](terraform-aws-infrastructure/ansible-server-setup)**.
+3. **[docker-kubernetes-laravel](docker-kubernetes-laravel)**: High-scale orchestration configuration utilizing optimized multi-stage container builds, local compose simulators, and production Helm charts. Includes a sub-lab for **[ArgoCD GitOps synchronization](docker-kubernetes-laravel/gitops-argocd)**.
+4. **[linux-backup-automation](linux-backup-automation)**: Automated data recovery pipeline featuring system health checks, GPG symmetric encryption, remote transfer, retention policies, and webhook alerts.
+5. **[monitoring-stack](monitoring-stack)**: Self-contained monitoring platform provisioning Prometheus data scraping, Alertmanager alert routing, Node Exporter systems metrics, and pre-loaded Grafana dashboards.
 
-1. **[Laravel DevOps: CI/CD & Zero-Downtime Deployment](laravel-devops-cicd)**
-   - *Topics:* Laravel, Docker Multi-Stage, GitHub Actions, Nginx, Production Tuning.
-   - *Key Deliverables:* Complete pipeline with testing and atomic symlink-switching scripts for zero-downtime releases.
-
-2. **[AWS Multi-Tier Infrastructure via Terraform](terraform-aws-infrastructure)**
-   - *Topics:* Terraform Modules, VPC, Bastion Hosts, RDS Postgres, IAM Policies, S3, Cost Projections.
-   - *Key Deliverables:* Highly-secure two-tier isolated cloud networking design deployed completely via modules.
-
-3. **[High-Availability Laravel App on Kubernetes](docker-kubernetes-laravel)**
-   - *Topics:* Docker, Kubernetes, Helm Charts, Ingress Controllers, Pod Autoscaling (HPA), sidecar proxies.
-   - *Key Deliverables:* Multi-replica pod deployments with Nginx sidecar containers sharing workspace volumes.
-
-4. **[Automated Linux Backup, Encryption & Alerts](linux-backup-automation)**
-   - *Topics:* Bash, Cron Scheduling, GPG Encryption, Rsync/SSH backups, fail2ban monitoring, Discord webhook notifications.
-   - *Key Deliverables:* Robust maintenance shell scripts with partition validations, log rotation, and automated encryption.
-
-5. **[Prometheus & Grafana Monitoring Stack](monitoring-stack)**
-   - *Topics:* Prometheus, Grafana Dashboards, Node Exporter, cAdvisor, Alertmanager, metric alerting rules.
-   - *Key Deliverables:* Fully containerized monitoring platform with auto-provisioned dashboards and alert endpoints.
-
----
-
-### 🎁 Bonus DevOps Labs
-
-I have also constructed individual configurations demonstrating configurations for other popular developer-operations tools:
-- **[GitOps CD with ArgoCD](bonus/gitops-argocd)**: Declarative self-healing deployments tracking Git status.
-- **[Azure DevOps Pipelines](bonus/azure-devops-pipeline)**: Multi-stage YAML configuration building containers and deploying to staging app slots.
-- **[Ansible Playbook Server Setup](bonus/ansible-server-setup)**: Playbook for base package provisioning, SSH hardening, and system security.
-- **[Jenkins Declarative Pipeline](bonus/jenkins-cicd)**: Orchestrated pipeline building Docker images and executing deployments.
+### 🔒 Enterprise DevOps & Systems Architecture
+6. **[azure-devops-pipeline](azure-devops-pipeline)**: Multi-stage YAML continuous integration and deployment pipelines targeting container compilation, security tags, and Azure Web App slot swaps.
+7. **[kubernetes-production-lab](kubernetes-production-lab)**: Production cluster security constraints, applying logical namespaces, compute resource quotas (ResourceQuotas), container limits (LimitRanges), and zero-trust NetworkPolicy databases tier isolation rules.
+8. **[system-design-notes](system-design-notes)**: Diagrammatic system design blueprints covering token-bucket rate limiting, database sharding rules, horizontal scaling, and asynchronous event-queues.
+9. **[ai-engineering-prompts](ai-engineering-prompts)**: Systematic instructions and prompt engineering models to generate infrastructure files, troubleshoot pipeline logs, and optimize Docker environments.
+10. **[resume](resume)**: ATS-compliant, recruiter-ready professional resume documenting work experience and technical competence grids.
 
 ---
 
