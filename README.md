@@ -58,13 +58,7 @@ hiteshv253/
 └── README.md                 # Project documentation
 ```
 
-## Installation
-Initialize and boot the application locally with Docker Compose:
-```bash
-docker-compose up -d --build
-```
-Access the local endpoint at `http://localhost:8080/api/v1/healthz`.
-
+ 
 ## Deployment
 Zero-downtime releases on standard virtual servers are handled via atomic directory swapping:
 1. **Prepare Release**: Creates a new timestamped directory under `releases/YYYYMMDDHHMMSS`.
