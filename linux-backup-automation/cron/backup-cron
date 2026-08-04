@@ -1,5 +1,0 @@
-# Run daily backup at 2:00 AM
-0 2 * * * /bin/bash /opt/backup-automation/scripts/backup.sh >> /var/log/backup.log 2>&1
-
-# Run system health disk monitor check every hour
-0 * * * * df -h / | awk 'NR==2 {print $5}' | sed 's/%%//' | xargs -I {} sh -c 'if [ {} -gt 85 ]; then curl -H "Content-Type: application/json" -X POST -d "{\"content\":\"🚨 Disk warning on host $(hostname): {}% used!\"}" https://discord.com/api/webhooks/12345678/example-webhook-hash; fi'
